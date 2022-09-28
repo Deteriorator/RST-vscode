@@ -21,16 +21,13 @@ export interface CodeLineElement {
 }
 
 const getCodeLineElements = (() => {
-	let elements: CodeLineElement[];
+	let elements: any;
 	return () => {
 		if (!elements) {
 			elements = Array.prototype.map.call(
 				document.getElementsByClassName('code-line'),
-				(element: any) => {
-					const line = +element.getAttribute('data-line');
-					return { element, line };
-				})
-				.filter((x: any) => !isNaN(x.line));
+				(element: any) => {const line = +element.getAttribute('data-line');return { element, line };}
+			).filter((x: any) => !isNaN(x.line));
 		}
 		return elements;
 	};

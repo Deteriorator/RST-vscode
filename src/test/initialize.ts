@@ -33,7 +33,7 @@ export async function closeActiveWindows(): Promise<any> {
   // https://github.com/Microsoft/vscode/blob/master/extensions/vscode-api-tests/src/utils.ts
   await new Promise(async (c, e) => {
     if (vscode.window.visibleTextEditors.length === 0) {
-      return c();
+      return c(e);
     }
 
     // TODO: the visibleTextEditors variable doesn't seem to be
@@ -45,12 +45,12 @@ export async function closeActiveWindows(): Promise<any> {
       }
 
       clearInterval(interval);
-      c();
+      c(e);
     }, 10);
 
     try {
       await vscode.commands.executeCommand("workbench.action.closeAllEditors");
-    } catch (e) {
+    } catch (e:any) {
       clearInterval(interval);
       e(e);
     }

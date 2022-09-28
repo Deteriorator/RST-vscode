@@ -28,7 +28,7 @@
 	],
 	"activationEvents": [
 		"workspaceContains:**/*.rst",
-		"onLanguage:rst",
+		"onLanguage:restructuredtext",
 		"onCommand:rst.preview.toggleLock",
 		"onCommand:rst.preview.refresh",
 		"onCommand:rst.showPreview",
@@ -41,7 +41,7 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "rst",
+				"id": "restructuredtext",
 				"aliases": [
 					"RST",
 					"ReStructured Text"
@@ -109,7 +109,7 @@
 			"editor/title": [
 				{
 					"command": "rst.showPreviewToSide",
-					"when": "editorLangId == rst",
+					"when": "editorLangId == restructuredtext",
 					"alt": "rst.showPreview",
 					"group": "navigation"
 				},
@@ -137,31 +137,31 @@
 			"explorer/context": [
 				{
 					"command": "rst.showPreview",
-					"when": "resourceLangId == rst",
+					"when": "resourceLangId == restructuredtext",
 					"group": "navigation"
 				}
 			],
 			"editor/title/context": [
 				{
 					"command": "rst.showPreview",
-					"when": "resourceLangId == rst",
+					"when": "resourceLangId == restructuredtext",
 					"group": "navigation"
 				}
 			],
 			"commandPalette": [
 				{
 					"command": "rst.showPreview",
-					"when": "editorLangId == rst",
+					"when": "editorLangId == restructuredtext",
 					"group": "navigation"
 				},
 				{
 					"command": "rst.showPreviewToSide",
-					"when": "editorLangId == rst",
+					"when": "editorLangId == restructuredtext",
 					"group": "navigation"
 				},
 				{
 					"command": "rst.showLockedPreviewToSide",
-					"when": "editorLangId == rst",
+					"when": "editorLangId == restructuredtext",
 					"group": "navigation"
 				},
 				{
@@ -171,7 +171,7 @@
 				},
 				{
 					"command": "rst.showPreviewSecuritySelector",
-					"when": "editorLangId == rst"
+					"when": "editorLangId == restructuredtext"
 				},
 				{
 					"command": "rst.showPreviewSecuritySelector",
@@ -188,13 +188,13 @@
 				"command": "rst.showPreview",
 				"key": "shift+ctrl+v",
 				"mac": "shift+cmd+v",
-				"when": "editorLangId == rst"
+				"when": "editorLangId == restructuredtext"
 			},
 			{
 				"command": "rst.showPreviewToSide",
 				"key": "ctrl+k v",
 				"mac": "cmd+k v",
-				"when": "editorLangId == rst"
+				"when": "editorLangId == restructuredtext"
 			}
 		],
 		"configuration": {
@@ -246,7 +246,7 @@
 		},
 		"grammars": [
 			{
-				"language": "rst",
+				"language": "restructuredtext",
 				"path": "./syntaxes/restructuredtext.tmlanguage",
 				"scopeName": "text.restructuredtext"
 			}
@@ -266,19 +266,19 @@
 	},
 	"dependencies": {
 		"lodash.throttle": "4.1.1",
-		"vscode-nls": "4.0.0"
+		"vscode-nls": "^5.2.0"
 	},
 	"devDependencies": {
 		"@studio/changes": "1.7.0",
 		"@types/lodash.throttle": "4.1.4",
 		"@types/mocha": "5.2.5",
-		"@types/node": "10.11.3",
+		"@types/node": "^18.7.23",
 		"mocha": "5.2.0",
 		"ts-loader": "5.2.1",
 		"tslib": "1.9.3",
 		"tslint": "5.11.0",
-		"typescript": "3.1.1",
-		"vscode": "1.1.21",
+		"typescript": "4.8.4",
+		"vscode": "1.1.37",
 		"webpack": "4.20.0",
 		"webpack-cli": "3.1.2"
 	}

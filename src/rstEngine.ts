@@ -24,7 +24,7 @@ export class RSTEngine {
   public async preview(doc: TextDocument): Promise<string> {
     try {
       return this.compile(doc.fileName);
-    } catch (e) {
+    } catch (e: any) {
       return this.errorSnippet(e.toString());
     }
   }
